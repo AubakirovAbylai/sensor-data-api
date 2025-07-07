@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Всe сенсоры</title>
+</head>
+<body>
+<!-- showSensor.html -->
+<h1 th:text="'Сенсор: ' + ${sensor.name}"></h1>
+
+<hr/>
+<a href="/sensors">⬅ Назад к списку сенсоров</a>
+
+<hr/>
+<form th:action="@{/sensors/{id}/edit(id=${sensor.id})}">
+    <input type="submit" value="Редактировать!"/>
+</form>
+<form th:method="post" th:action="@{/sensors/{id}/delete(id=${sensor.id})}">
+    <input type="submit" value="Удалить"/>
+</form>
+</body>
+</html>

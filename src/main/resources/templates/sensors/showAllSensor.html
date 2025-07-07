@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Все сенсоры</title>
+</head>
+<body>
+<div th:each="sensor : ${sensors}">
+    <a th:href="@{/sensors/{id}(id=${sensor.id})}"
+       th:text="${sensor.name}"></a>
+</div>
+<br/>
+<hr/>
+<a href="/sensors/new">Добавить сенсор</a>
+</body>
+</html>
